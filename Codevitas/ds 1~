@@ -1,0 +1,21 @@
+Upper Bounds: Big-O
+
+O(g(n)) = { the set of all f such that there exist positive constants c and n0 satisfying 0 <= f(n) <= cg(n) for all n >= n0 }.
+This means that, for example, O(n2) is a set, or family, of functions like n2 + n, 4n2 - n log n + 12, n2/5 - 100n, n log n, 50n, and so forth. Every function f(n) bounded above by some constant multiple g(n) for all values of n greater than a certain value is in O(g(n)).
+Examples:
+
+Show 3n2 + 4n - 2 = O(n2). 
+We need to find c and n0 such that:
+3n2 + 4n - 2 <= cn2 for all n >= n0 .
+Divide both sides by n2, getting:
+3 + 4/n - 2/n2 <= c for all n >= n0 .
+If we choose n0 equal to 1, then we need a value of c such that:
+3 + 4 - 2 <= c
+We can set c equal to 6. Now we have:
+3n2 + 4n - 2 <= 6n2 for all n >= 1 .
+Show n3 != O(n2). Let's assume to the contrary that
+n3 = O(n2)
+Then there must exist constants c and n0 such that
+n3 <= cn2 for all n >= n0.
+Dividing by n2, we get:
+n <= c for all n >= n0.

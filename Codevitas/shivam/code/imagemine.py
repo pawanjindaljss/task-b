@@ -1,0 +1,63 @@
+from bs4 import BeautifulSoup
+# import requests
+# import re
+import urllib2
+import os
+# import cookielib
+import json
+
+
+def get_soup(url, header):
+    return BeautifulSoup(urllib2.urlopen(urllib2.Request(url, headers=header)), 'html.parser')
+
+
+def scrapeGoogle(query):
+    x = 0
+    image_type = "ActiOn"
+    query = query.split()
+    query = '+'.join(query)
+    url = "https://www.google.co.in/search?q=" + query + "&source=lnms&tbm=isch"
+    print url
+    # add the directory for your image here
+    DIR = "images/"
+    header = {'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
+              }
+    soup = get_soup(url, header)
+
+    ActualImages = []  # contains the link for Large original images, type of  image
+    for a in soup.find_all("div", {"class": "rg_meta"}):
+        link, Type = json.loads(a.text)["ou"], json.loads(a.text)["ity"]
+        ActualImages.append((link, Type))
+
+    print "there are total", len(ActualImages), "images"
+
+    # print images
+    j = 0
+    for i, (img, Type) in enumerate(ActualImages):
+        try:
+            if j == 12:
+                break
+            req = urllib2.Request(img, headers={'User-Agent': header})
+            raw_img = urllib2.urlopen(req).read()
+            if not os.path.exists(DIR):
+                os.mkdir(DIR)
+            cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
+            print("...")
+            f = open(DIR + query + "+" + str(x) + ".jpg", 'wb')
+
+            f.write(raw_img)
+            f.close()
+            x = int(x) + 1
+            j +=1
+        except Exception as e:
+            print "could not load : " + str(img)
+            print e
+
+
+def callEverything():
+    query_list = ["irfan khan"]
+    for query in query_list:
+        scrapeGoogle(query)
+
+callEverything()
+# All you have to do is populate the query_list with names of search queiries .

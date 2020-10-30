@@ -1,0 +1,91 @@
+Home Lighting
+Problem Description
+You are moving to a new apartment and want to plan your total lighting cost for the next 2 years which includes the cost of bulb procurement and cost of electricity consumption. Three types of bulbs are available in the market.
+
+  1. Regular bulbs, which cost C1, have a warranty of M1 hours, and have a running cost of R1 per hour 
+2. CFL bulbs, which cost C2, warranty M2 hours, running, cost R2 per hour 
+3. LED bulbs, which cost C3, warranty M3 hours, running cost R3 per hour  
+C1 < C2 < C3 and R1 > R2 > R3, nothing can be said about M1, M2, and M3. 
+You have a plan for 1 bulb in the kitchen at H1 hours per day, 2 bulbs per room across 3 rooms at H2, H3, H4 hours per day per room per bulb, 1 bulb for bathroom at H5 hours per day. 
+When you prepare your budget you assume that it will last only till the warranty period. 
+Given the above requirements, come up with a bulb procurement plan that incurs least cost over 2 years - where cost includes procurement and running cost. In case warranty expires, in your model assume that the bulb will need to be replaced. Also assume that you will move out after 2 years, and so you are not concerned about stretching the life of bulbs beyond that time. Assume that there are 365 days in each year.
+
+Constraints
+C1 < C2 < C3
+
+R1 > R2 > R3
+
+0<= Fixed Cost <=1000
+
+0<= Warranty<=150
+
+0<= Running cost <=30000
+
+0<= H1,H2,H3,H4,H5<=24
+
+Input Format
+The first three lines contains three integers denoting Fixed cost, Warranty and running cost of regular bulb, CFL and LED respectively.
+
+The next five lines contain one integer each denoting usage hours of rooms (H1, H2, H3, H4, H5)
+
+Output
+Minimum cost to light the house.
+
+Test Case
+
+Explanation
+Example 1
+
+Input
+
+50 1500 16
+
+100 8000 14
+
+400 25000 1
+
+1
+
+2
+
+8
+
+14
+
+2
+
+Output
+
+38500
+
+Explanation
+
+Minimum cost for meeting all the lighting requirement of house is 38500.
+
+Example 2
+
+Input
+
+50 10000 16
+
+100 8000 14
+
+800 25000 1
+
+2
+
+6
+
+10
+
+8
+
+1
+
+Output
+
+41960
+
+Explanation
+
+Minimum cost for meeting all the lighting requirement of house is 41960.

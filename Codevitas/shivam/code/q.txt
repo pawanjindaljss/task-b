@@ -1,0 +1,31 @@
+Q1. How to stop the services in android?
+	4 option
+
+
+Q2. Can pCloudy be used to test Mobile Web on a browser on real device?
+	yes
+
+
+Q3. What is breakpoint in android?
+
+Q4. What built-in database is Android shipped with?
+	sqllite
+
+Q6. Which all on-device performance parameters can be fetched on pCloudy Android device
+
+
+Q7. How do you get the crash log from a physical iOS device?
+
+
+Q8. Android Packaging process
+
+	Code-> Byte code->Delvik class file->apk file
+	Code->Delvik Class->apk file
+	None
+
+
+
+Q-9 Mobile Web apps are device agnostic.
+Native apps have full access of device.
+Hybrid application are combination of Native container and HTML 5 elements
+Mobile web apps are available in App store.
