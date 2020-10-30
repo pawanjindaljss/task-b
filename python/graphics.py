@@ -1,4 +1,8 @@
 import turtle
+import pygame
+import time
+import os
+import tkinter
 res=5
 for x in range(res):
 	turtle.forword(100)
